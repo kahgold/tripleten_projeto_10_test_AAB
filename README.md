@@ -1,47 +1,45 @@
-# Project: Integrated Project 2
+# Projeto: Projeto Integrado 2
 
-You work at a startup that sells food products. You need to analyze user behavior for your company application. It is an integrated project that combine all of previous subject, especially Business Analytics, A/B Testing, and Data Storytelling.
+Você trabalha em uma startup que vende produtos alimentícios. Você precisa analisar o comportamento do usuário para o aplicativo da sua empresa. É um projeto integrado que combina todas as disciplinas anteriores, principalmente Business Analytics, Teste A/B e Data Storytelling.
 
-As a data analyst for a startup that sells food products, it's essential to understand user behavior for the company's app. In this project, we'll investigate the **sales funnel** and study **user behavior** using an **A/A/B test** to see how **changes to the app's font** will **impact user engagement**. We'll begin by analyzing the sales funnel to understand how users **reach the purchase stage**, how many users make it to this stage, and **which stages have the most drop-offs**. Then, we'll move on to the A/A/B test, where users are split into three groups: two control groups that receive the old fonts and one test group that receives the new fonts. We'll determine **which** set of fonts **produces better results** and confirm if the test groups were split correctly.
+Como analista de dados de uma startup que vende produtos alimentícios, é essencial entender o comportamento do usuário no aplicativo da empresa. Neste projeto, investigaremos o **funil de vendas** e estudaremos o **comportamento do usuário** usando um **teste A/A/B** para ver como as **alterações na fonte do aplicativo** irão ** impactar o envolvimento do usuário**. Começaremos analisando o funil de vendas para entender como os usuários **chegam ao estágio de compra**, quantos usuários chegam a esse estágio e **quais estágios apresentam mais desistências**. Em seguida, passaremos para o teste A/A/B, onde os usuários são divididos em três grupos: dois grupos de controle que recebem as fontes antigas e um grupo de teste que recebe as novas fontes. Determinaremos **qual** conjunto de fontes **produz melhores resultados** e confirmaremos se os grupos de teste foram divididos corretamente.
 
-We'll be using a dataset that combines general data and A/A/B analysis data to conduct our study. This project will test our abilities in data cleaning, data visualization, hypothesis testing, and statistics. Let's dive in and see what insights we can uncover from this analysis.
+Usaremos um conjunto de dados que combina dados gerais e dados de análise A/A/B para conduzir nosso estudo. Este projeto testará nossas habilidades em limpeza de dados, visualização de dados, teste de hipóteses e estatística. Vamos nos aprofundar e ver quais insights podemos descobrir com essa análise.
 
-To complete this project, we'll need to perform the following steps:
-- **Open the data file and read the general information**.
-- **Prepare the data for analysis** by renaming columns, checking for missing values and correcting data types. Add a date and time column and a separate column for dates.
-- Study and check the data to determine:
-    - the **number of events and users in the logs**,
-    - the **average number of events per user**, and
-    - the **period of time the data covers**.
-    - Plot a **histogram** by date and time to determine whether you have equally complete data for the entire period. Find the moment at which the data starts to be complete and ignore the earlier section. Make sure you have users from all three experimental groups.
-- Study the **event funnel** by determine:
-    - the **frequency of occurrence for each event** in the logs,
-    - the **number of users who performed each action**, and
-    - the **proportion** of users who **performed** each action **at least once**.
-    - Use the event funnel to **find the share of users that proceed from each stage** to the next. Identify the **stage at which you lose the most users** and **determine the share of users that make the entire journey** from their first event to payment.
-- Study the results of the experiment by determining the **number of users in each group**, checking for a **statistically significant difference between samples** 246 and 247, and **comparing the results** of the group with altered fonts to those of the control groups. Calculate the **significance level** and determine the number of statistical hypothesis tests you carried out. If necessary, adjust the significance level and repeat the previous steps.
-
+Para concluir este projeto, precisaremos realizar as seguintes etapas:
+- **Abra o arquivo de dados e leia as informações gerais**.
+- **Prepare os dados para análise** renomeando colunas, verificando valores ausentes e corrigindo tipos de dados. Adicione uma coluna de data e hora e uma coluna separada para datas.
+- Estude e verifique os dados para determinar:
+    - o **número de eventos e usuários nos logs**,
+    - o **número médio de eventos por usuário**, e
+    - o **período de tempo que os dados cobrem**.
+    - Trace um **histograma** por data e hora para determinar se você tem dados igualmente completos para todo o período. Encontre o momento em que os dados começam a ficar completos e ignore a seção anterior. Certifique-se de ter usuários de todos os três grupos experimentais.
+- Estude o **funil de eventos** determinando:
+    - a **frequência de ocorrência de cada evento** nos registros,
+    - o **número de usuários que realizaram cada ação**, e
+    - a **proporção** de usuários que **realizaram** cada ação **pelo menos uma vez**.
+    - Use o funil de eventos para **encontrar a parcela de usuários que passam de cada etapa** para a próxima. Identifique o **estágio em que você perde mais usuários** e **determine a parcela de usuários que fazem toda a jornada** desde o primeiro evento até o pagamento.
+- Estudar os resultados do experimento determinando o **número de usuários em cada grupo**, verificando uma **diferença estatisticamente significativa entre as amostras** 246 e 247, e **comparando os resultados** do grupo com alterações fontes para aquelas dos grupos de controle. Calcule o **nível de significância** e determine o número de testes de hipóteses estatísticas que você realizou. Se necessário, ajuste o nível de significância e repita os passos anteriores.
 **Data dictionary**
 
-**The logs_exp_us table:**
-    
-- `EventName` — event name
-- `DeviceIDHash` — unique user identifier
-- `EventTimestamp` — event time
-- `ExpId` — experiment number: 246 and 247 are the control groups, 248 is the test group
+**A tabela logs_exp_us:**
+- `EventName` — nome do evento
+- `DeviceIDHash` — identificador exclusivo do usuário
+- `EventTimestamp` — hora do evento
+- `ExpId` — número do experimento: 246 e 247 são os grupos de controle, 248 é o grupo de teste
 
-**Conclusions**
+**Conclusões**
 
-- This **project's aim** is to **investigate the sales funnel** and study user behaviour using an **A/A/B test** to see how **changes to the app's font affect user engagement**.
-- Some **data pre-processing** was performed, such as **renaming columns**, **replacing values** with more practical names, as well as **converting** some columns to the appropriate **data types**. There was some **duplicated data**, but it was **removed** e there was **no missing data**.
-- Preliminary **data exploration** reveals that our dataframe **contains** some **unnecessary data** from before the testing time. Removing this data **removed only 1.16% of the events** that occurred and **0.23% of the users**. This figure is insignificant in comparison to the total data and will not skew the analysis results.
-- **Event Funnel Analysis**:
-    - **Users follow a similar route** of main screen appear -> offers screen appear -> cart screen appear -> payment screen successful.
-    - The stage with the **greatest loss is between the first and second**, with nearly 39% of users (more than 2,826 unique id) failing to advance to the next level.
-    - More than **47% of users undergo the entire journey** from main screen to succesfully make a payment.
-- **A/A/B Testing**:
-    - **Mann Whitney U test** is used in this project
-    - The test outcome demonstrates how the **test group outperformed the control group** in terms of **visitors** (main screen appear) and **interested users** (offers screen appear). However, the font change should have no effect on this stage of the event funnel because it has no effect on convincing first-time users to use the app and continue to the offer page.
-    - The test reveals that the **test group are fail** to have an increase that is enough **to pass the signicant threshold** in terms of ***Add-to-Cart users*** (cart screen appear) and ***Buyers*** (payment screen successful).
-    - The conversion value of test group are also failing to shows any increment compared to one of the control group.
-- **A/A/B testing proved that changing the font of the app does not have the expected positive impact on user engagement**.
+- O **objetivo deste projeto** é **investigar o funil de vendas** e estudar o comportamento do usuário usando um **teste A/A/B** para ver como **as alterações na fonte do aplicativo afetam o envolvimento do usuário**.
+- Alguns **pré-processamentos** de dados foram realizados, como **renomear colunas**, **substituir valores** por nomes mais práticos, bem como **converter** algumas colunas nos **tipos de dados apropriados **. Havia alguns **dados duplicados**, mas foram **removidos** e **não havia dados faltantes**.
+- A **exploração de dados** preliminar revela que nosso dataframe **contém** alguns **dados desnecessários** anteriores ao período de teste. A remoção desses dados **removeu apenas 1,16% dos eventos** que ocorreram e **0,23% dos usuários**. Este número é insignificante em comparação com os dados totais e não distorcerá os resultados da análise.
+- **Análise de funil de eventos**:
+    - **Os usuários seguem uma rota semelhante** da tela principal aparece -> tela de ofertas aparece -> tela do carrinho aparece -> tela de pagamento bem-sucedida.
+    - A etapa com **maior perda fica entre a primeira e a segunda**, com quase 39% dos usuários (mais de 2.826 id únicos) não conseguindo avançar para o próximo nível.
+    - Mais de **47% dos usuários passam por toda a jornada** da tela principal para efetuar um pagamento com sucesso.
+- **Teste A/A/B**:
+    - **Teste Mann Whitney U** é usado neste projeto
+    - O resultado do teste demonstra como o **grupo de teste superou o grupo de controle** em termos de **visitantes** (aparece a tela principal) e **usuários interessados** (aparece a tela de ofertas). No entanto, a alteração da fonte não deve ter efeito nesta fase do funil do evento porque não tem efeito em convencer os usuários iniciantes a usar o aplicativo e prosseguir para a página de ofertas.
+    - O teste revela que o **grupo de teste falhou** em ter um aumento que é suficiente **para ultrapassar o limite significativo** em termos de ***usuários Adicionar ao carrinho*** (a tela do carrinho aparece) e ***Compradores*** (tela de pagamento bem-sucedida).
+    - O valor de conversão do grupo de teste também não mostra qualquer incremento em comparação com o do grupo de controle.
+- **Os testes A/A/B provaram que alterar a fonte do aplicativo não tem o impacto positivo esperado no envolvimento do usuário**.
